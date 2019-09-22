@@ -1,26 +1,17 @@
-body {
-  font-family: sans-serif;
+.component-selector_tool__selector_wrapper select {
+    border: 1px solid rgba(201, 201, 204, 0.48);
+    -webkit-box-shadow: inset 0 1px 2px 0 rgba(35, 44, 72, 0.06);
+    box-shadow: inset 0 1px 2px 0 rgba(35, 44, 72, 0.06);
+    border-radius: 3px;
+    padding: 14px 12px;
+    outline: none;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
-.component-selector-tool__input {
+.component-selector_tool__selector_wrapper {
+    margin-bottom: 1em;
 }
-.component-selector-tool__input.component-selector-tool__input_error {
-  background-color: #fff3f6;
-  border-color: #f3e0e0;
-  color: #a95a5a;
-  box-shadow: inset 0 1px 3px 0 rgba(146, 62, 62, 0.05);
-}
-.component-selector-tool__input.component-selector-tool__input_ready {
-  background-color: #f3fff8;
-  border-color: #e0f3e7;
-  color: #5aa987;
-  box-shadow: inset 0 1px 3px 0 rgba(146, 62, 62, 0.05);
-}
-.component-selector-tool__id {
-  background: #fff;
-  border: 1px solid rgba(201, 201, 204, 0.48);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  line-height: 1.6em;
-  width: 100%;
-  text-align: center;
+.component-selector_tool__preview_wrapper img {
+    width: 100%;
 }
