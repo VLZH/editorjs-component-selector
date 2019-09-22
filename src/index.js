@@ -58,10 +58,10 @@ class ComponentSelectorTool {
     }
 
     render() {
-        this.nodes.container = this.makeElement(
-            "div",
-            this.makeClass("container")
-        );
+        this.nodes.container = this.makeElement("div", [
+            this.makeClass("container"),
+            "cdx-block"
+        ]);
         this.nodes.container.appendChild(this.makeSelector());
         return this.nodes.container;
     }
