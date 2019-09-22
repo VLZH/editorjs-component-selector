@@ -1,7 +1,10 @@
 # Editor.js plugin for selecting of component (more likely simple selector)
 
+![preview](/images/preview.png)
+
 ## Disclaimer
 My advice: Do not use this library =)
+This lib do not render React components to Editor.js, just render image
 
 ### Installation
 ```bash
@@ -17,7 +20,8 @@ var editor = EditorJS({
     component: {
         class: ComponentSelectorTool,
         config: {
-            title: "OrderForm",
+            name: "OrderForm",
+            alias: "Форма заявки",
             props: {},
             preview: "..."
         }
@@ -32,8 +36,7 @@ var editor = EditorJS({
     "type": "component",
     "data": {
         "component": "OrderForm",
-        "props": {},
-        "preview": "..."
+        "props": {}
     }
 }
 ```
