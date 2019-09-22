@@ -9,13 +9,15 @@ const editor = new EditorJS({
             config: {
                 components: [
                     {
-                        title: "OrderForm",
+                        name: "OrderForm",
+                        alias: "Форма заявки",
                         props: {},
                         preview:
                             "https://reactjsexample.com/content/images/2018/10/Calendar-and-Clock.jpg"
                     },
                     {
-                        title: "SubscribeForm",
+                        name: "SubscribeForm",
+                        alias: "Форма подписки",
                         props: {},
                         preview:
                             "https://1stwebdesigner.com/wp-content/uploads/2010/09/contact-form-html-php-tutorial.jpg"
@@ -25,7 +27,15 @@ const editor = new EditorJS({
         }
     },
     data: {
-        blocks: []
+        blocks: [
+            {
+                type: "component",
+                data: {
+                    component: "OrderForm",
+                    props: {}
+                }
+            }
+        ]
     }
 });
 

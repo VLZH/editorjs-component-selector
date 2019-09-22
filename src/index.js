@@ -4,8 +4,7 @@ const ICON = `<img width="20" height="20" src="data:image/svg+xml;base64,PHN2ZyB
 
 const DEFAULT_DATA = {
     component: null,
-    props: {},
-    preview: null
+    props: {}
 };
 
 class ComponentSelectorTool {
@@ -69,9 +68,11 @@ class ComponentSelectorTool {
 
     set data(data) {
         this._data = Object.assign({}, DEFAULT_DATA, data);
-        if (this.validate()) {
-            this.renderPreview();
-        }
+        setTimeout(() => {
+            if (this.validate()) {
+                this.renderPreview();
+            }
+        }, 0);
     }
 
     get data() {
@@ -89,14 +90,15 @@ class ComponentSelectorTool {
         return false;
     }
 
+    getComponentByName(name) {
+        return this.config.components.find(c => c.name === name);
+    }
+
     changeComponent(selector) {
-        const component = this.config.components.find(
-            c => c.title === selector.value
-        );
+        const component = this.getComponentByName(selector.value);
         this.data = {
-            component: component.title,
-            props: component.props || {},
-            preview: component.preview || null
+            component: component.name,
+            props: component.props || {}
         };
     }
 
@@ -116,10 +118,10 @@ class ComponentSelectorTool {
                 "option",
                 [this.makeClass("option")],
                 {
-                    value: component.title
+                    value: component.name
                 }
             );
-            option.innerText = component.title;
+            option.innerText = component.alias || component.name;
             this.nodes.options.push(option);
             selector.appendChild(option);
         }
@@ -145,6 +147,7 @@ class ComponentSelectorTool {
      * @param {string} preview
      */
     renderPreview() {
+        console.log("renderPreview");
         if (!this.nodes.preview) {
             this.nodes.container.appendChild(this.makePreviewWrapper());
             this.nodes.preview = this.makeElement("img", [
@@ -152,7 +155,9 @@ class ComponentSelectorTool {
             ]);
             this.nodes.preview_wrapper.appendChild(this.nodes.preview);
         }
-        this.nodes.preview.src = this.data.preview;
+        this.nodes.preview.src = this.getComponentByName(
+            this.data.component
+        ).preview;
     }
 }
 
