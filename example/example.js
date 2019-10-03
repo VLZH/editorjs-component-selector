@@ -31,7 +31,7 @@ const editor = new EditorJS({
             {
                 type: "component",
                 data: {
-                    component: "OrderForm",
+                    component: "SubscribeForm",
                     props: {}
                 }
             }

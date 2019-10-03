@@ -21,7 +21,7 @@ class ComponentSelectorTool {
             preview_wrapper: null,
             preview: null
         };
-        this._data = { ...DEFAULT_DATA };
+        this._data = null;
         this.data = data;
     }
 
@@ -125,6 +125,7 @@ class ComponentSelectorTool {
             this.nodes.options.push(option);
             selector.appendChild(option);
         }
+        selector.value = this.data.component
         selector.addEventListener("change", event =>
             this.changeComponent(event.target)
         );
@@ -147,7 +148,6 @@ class ComponentSelectorTool {
      * @param {string} preview
      */
     renderPreview() {
-        console.log("renderPreview");
         if (!this.nodes.preview) {
             this.nodes.container.appendChild(this.makePreviewWrapper());
             this.nodes.preview = this.makeElement("img", [
