@@ -20,10 +20,14 @@ var editor = EditorJS({
     component: {
         class: ComponentSelectorTool,
         config: {
-            name: "OrderForm",
-            alias: "Форма заявки",
-            props: {},
-            preview: "..."
+            components: [
+                {
+                    name: "OrderForm",
+                    alias: "Форма заявки",
+                    props: {},
+                    preview: "..."
+                }
+            ]
         }
     }
   }

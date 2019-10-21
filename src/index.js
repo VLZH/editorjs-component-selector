@@ -11,6 +11,9 @@ class ComponentSelectorTool {
     constructor({ data, config, api }) {
         this.api = api;
         this.config = config;
+        if (!config.components || !config.components.length) {
+            throw new Error("You must define one component at least")
+        }
         this.nodes = {
             container: null,
             //
@@ -125,7 +128,7 @@ class ComponentSelectorTool {
             this.nodes.options.push(option);
             selector.appendChild(option);
         }
-        selector.value = this.data.component
+        selector.value = this.data.component || this.config.components[0].name;
         selector.addEventListener("change", event =>
             this.changeComponent(event.target)
         );

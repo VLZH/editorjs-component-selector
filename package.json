@@ -1,6 +1,6 @@
 {
     "name": "editorjs-component-selector",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "",
     "main": "dist/main.js",
     "author": "vlzh",
@@ -25,6 +25,7 @@
         "css-loader": "^3.2.0",
         "iso-morphic-style-loader": "^2.0.1",
         "parcel-bundler": "^1.6.1",
+        "prettier": "^1.18.2",
         "webpack": "^4.40.2",
         "webpack-cli": "^3.3.9"
     },
